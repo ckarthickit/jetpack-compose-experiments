@@ -1,14 +1,14 @@
 object Versions {
-    const val androidBuildToolsPlugin = "4.2.0-alpha10"
+    const val androidBuildToolsPlugin = "4.2.0-alpha12"
     const val kotlinPlugin = "1.4.0"
 
-    const val composeVersion = "1.0.0-alpha02"
+    const val composeVersion = "1.0.0-alpha03" //alpha08 not yet released
 
     const val timberLibraryVersion = "4.7.1"
 }
 
 
-enum class BuildScriptPlugins private constructor(val artifact: String) {
+enum class BuildScriptPlugins(val artifact: String) {
     ANDROID_BUILD_TOOLS("com.android.tools.build:gradle:${Versions.androidBuildToolsPlugin}"),
     KOTLIN("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlinPlugin}"),
 }
@@ -24,9 +24,14 @@ object Deps {
         const val contraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
         const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha07"
 
-        const val composeUI = "androidx.compose.ui:ui:${Versions.composeVersion}"
-        const val composeMaterial = "androidx.compose.material:material:${Versions.composeVersion}"
-        const val uiTooling = "androidx.ui:ui-tooling:${Versions.composeVersion}"
+        object Compose {
+            const val UI = "androidx.compose.ui:ui:${Versions.composeVersion}"
+            const val Material = "androidx.compose.material:material:${Versions.composeVersion}"
+            const val UITooling = "androidx.ui:ui-tooling:${Versions.composeVersion}"
+            const val Compiler = "androidx.compose.compiler:compiler:${Versions.composeVersion}"
+
+        }
+
 
         // Testing Libraries
         const val junitExt = "androidx.test.ext:junit:1.1.2"

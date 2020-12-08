@@ -51,9 +51,10 @@ dependencies {
     implementation(Deps.kotlinStdLib)
     implementation(Deps.AndroidX.coreKotlinExtensions)
     implementation(Deps.AndroidX.appCompat)
-    implementation(Deps.AndroidX.composeUI)
-    implementation(Deps.AndroidX.composeMaterial)
-    implementation(Deps.AndroidX.uiTooling)
+    implementation(Deps.AndroidX.Compose.UI)
+    implementation(Deps.AndroidX.Compose.UITooling)
+    implementation(Deps.AndroidX.Compose.Material)
+    //implementation(Deps.AndroidX.Compose.Compiler)
 
     implementation(Deps.googleMaterialDesign)
     implementation(Deps.AndroidX.lifecycle)
