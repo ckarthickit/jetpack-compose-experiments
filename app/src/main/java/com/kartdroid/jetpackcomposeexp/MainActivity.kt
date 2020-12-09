@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -19,13 +18,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.setContent
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
-import com.kartdroid.jetpackcomposeexp.ui.JetpackComposeExpTheme
+import com.kartdroid.jetpackcomposeexp.ui.MaterialThemedSurface
+import com.kartdroid.jetpackcomposeexp.ui.parseColor
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ThemedSurface {
+            MaterialThemedSurface {
                 MyScreenContent()
             }
         }
@@ -65,19 +65,15 @@ fun MyScreenContent(names: List<String> = listOf("KC", "Android", "Compose")) {
  *  Re-Usable Composable-s
  */
 
-@Composable
-fun ThemedSurface(content: @Composable() () -> Unit) {
-    JetpackComposeExpTheme {
-        // A surface container using the 'background' color from the theme
-        Surface(color = MaterialTheme.colors.background) {
-            content()
-        }
-    }
-}
+
 
 @Composable
 fun Greeting(name: String, modifier: Modifier) {
-    Text(text = "Hello $name!", modifier)
+    Text(
+        text = "Hello $name!",
+        modifier,
+        style = MaterialTheme.typography.h5
+    )
 }
 
 @Composable
@@ -85,6 +81,7 @@ fun Counter(counter: Int, updateCount: (newValue: Int) -> Unit) {
     Button(
         onClick = { updateCount(counter + 1) },
         contentPadding = PaddingValues(0.dp),
+        backgroundColor = if(counter < 5) parseColor("#7F00FF") else Color.Green
     ) {
         Text("I've clicked $counter times", modifier = Modifier.padding(0.dp))
     }
@@ -94,8 +91,8 @@ fun Counter(counter: Int, updateCount: (newValue: Int) -> Unit) {
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
-    ThemedSurface {
+fun DefaultM1Preview() {
+    MaterialThemedSurface {
         MyScreenContent()
     }
 }
