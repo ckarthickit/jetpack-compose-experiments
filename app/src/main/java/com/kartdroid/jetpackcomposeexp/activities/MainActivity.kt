@@ -1,4 +1,4 @@
-package com.kartdroid.jetpackcomposeexp
+package com.kartdroid.jetpackcomposeexp.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

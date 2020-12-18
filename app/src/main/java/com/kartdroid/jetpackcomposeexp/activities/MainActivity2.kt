@@ -1,4 +1,4 @@
-package com.kartdroid.jetpackcomposeexp
+package com.kartdroid.jetpackcomposeexp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,6 +22,7 @@ import androidx.compose.ui.res.loadImageResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
+import com.kartdroid.jetpackcomposeexp.R
 import com.kartdroid.jetpackcomposeexp.ui.MaterialThemedSurface
 
 class MainActivity2 : AppCompatActivity() {
