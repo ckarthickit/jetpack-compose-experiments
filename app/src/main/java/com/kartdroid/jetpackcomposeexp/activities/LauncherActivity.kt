@@ -32,6 +32,20 @@ class LauncherActivity : AppCompatActivity() {
         }
     }
 
+    @Preview(showBackground = true)
+    @Composable
+    fun LauncherScreen() {
+        JetpackComposeExpTheme {
+            Column {
+                FullWidthListItem(text = "SimpleText") { launchActivity(SimpleTextActivity::class) }
+            }
+        }
+    }
+
+    private fun launchActivity(classObj: KClass<out Activity>) {
+        startActivity(Intent(this, classObj.java))
+    }
+
     @Composable
     fun FullWidthListItem(text: String, onClick: () -> Unit = { }) {
         TextButton(
@@ -42,20 +56,6 @@ class LauncherActivity : AppCompatActivity() {
                 .border(width = 2.dp, color = MaterialTheme.colors.primary)//BorderStroke(width = 1.dp, brush = SolidColor(Color.Black))
         ) {
             Text(text = text, color = MaterialTheme.colors.primary, modifier = Modifier.padding(8.dp))
-        }
-    }
-
-    private fun launchActivity(classObj: KClass<out Activity>) {
-        startActivity(Intent(this, classObj.java))
-    }
-
-    @Preview(showBackground = true)
-    @Composable
-    fun LauncherScreen() {
-        JetpackComposeExpTheme {
-            Column {
-                FullWidthListItem(text = "SimpleText") { launchActivity(SimpleTextActivity::class) }
-            }
         }
     }
 }
