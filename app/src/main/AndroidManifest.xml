@@ -20,6 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.SimpleTextActivity" />
+        <activity android:name=".activities.StyledTextActivity"/>
+
+        <!--- misc -->
         <activity android:name=".activities.MainActivity" />
         <activity android:name=".activities.MainActivity2" />
     </application>
