@@ -18,6 +18,8 @@
 SAMPLE=$1
 RESULT_FILE=$2
 
+echo ">>InputPath: ${SAMPLE}, OutputPath: ${RESULT_FILE}<<"
+
 if [ -f $RESULT_FILE ]; then
   rm $RESULT_FILE
 fi

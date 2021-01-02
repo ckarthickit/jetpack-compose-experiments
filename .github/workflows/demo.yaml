@@ -1,18 +1,17 @@
-name: demo
+name: Demo
 
 on:
   push:
     branches:
       # Push events on master branch
       - master
-      - 'pr/*'
     paths:
       - 'demo/**'
+      - '.github/workflows/**'
   pull_request:
-    branches:
-      - 'pr/*'
-    # paths:
-      #- 'demo/**'
+    paths:
+      - 'demo/**'
+      - '.github/workflows/demo.yaml'
 env:
   SAMPLE_PATH: demo
 
@@ -65,7 +64,8 @@ jobs:
     #   run: gradle wrapper
 
     - name: Build Demo
-      run: ./gradlew build
+      working-directory: ${{ env.SAMPLE_PATH }}
+      run: ./gradlew assembleDebug
 
     - name: Upload Demo APK
       uses: actions/upload-artifact@v2
@@ -92,12 +92,13 @@ jobs:
    #    run: ./gradlew lintDebug
 
     - name: Install Gems
+      working-directory: ${{ env.SAMPLE_PATH }}
       run: |
         gem install bundler
         bundle install
 
-    #
 #    - name: Run Danger
+#      working-directory: ${{ env.SAMPLE_PATH }}
 #      env:
 #        DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
 #      run: bundle exec danger
