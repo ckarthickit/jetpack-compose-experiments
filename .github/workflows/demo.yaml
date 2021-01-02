@@ -1,15 +1,18 @@
-name: Demo
+name: demo
 
 on:
   push:
     branches:
-      # Push events on tnl_develop branch
+      # Push events on master branch
       - master
+      - 'pr/*'
     paths:
       - 'demo/**'
   pull_request:
-    paths:
-      - 'demo/**'
+    branches:
+      - 'pr/*'
+    # paths:
+      #- 'demo/**'
 env:
   SAMPLE_PATH: demo
 
