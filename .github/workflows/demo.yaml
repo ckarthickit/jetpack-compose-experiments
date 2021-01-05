@@ -12,6 +12,7 @@ on:
     paths:
       - 'demo/**'
       - '.github/workflows/demo.yaml'
+      - 'scripts/**'
 env:
   SAMPLE_PATH: demo
 

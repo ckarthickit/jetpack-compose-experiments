@@ -36,8 +36,10 @@ while read -r -d ''; do
 	FILES+=("$REPLY")
 done < <(find $SAMPLE -type f \( -name "build.gradle*" -or -name "gradle-wrapper.properties" -or -name "Dependencies.kt" \) -print0)
 
+
 # Loop through files and append MD5 to result file
 for FILE in ${FILES[@]}; do
+	echo ">>Including: ${FILE} in cache key<<"
 	echo $(checksum_file $FILE) >> $RESULT_FILE
 done
 # Now sort the file so that it is
