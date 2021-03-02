@@ -43,8 +43,16 @@
 >  1. The `compose-compiler` and `kotlin` versions are incompatible
 >  2. You don't have an `@Preview` annotated @Composable in the corresponding Source File
 
+
+### Dependencies + Compatibility 
+
+|     Android Studio Version |     Gradle Version    |  Android Build tools - Gradle |   JDK Version   |  Compose Version    |
+|           -----            |           -----       |           -----               |     -----       |           -----     |
+| Android Studio Artic Fox - 2020.3.1 | gradle-6.8.2-bin.zip |     7.0.0-alpha08     |  jdk-11.0.10    |     1.0.0-beta01    |
+
 ### References
 
+- [Jetpack Compose - Pathway][jetpack_compose_pathway]
 - [Jetpack Compose - Setup][jetpack_compose_setup]
 - [Jetpack Compose - Library Structure][jetpack_compose_library_structure]
 - [Jetpack Compose - Github Repo][jetpack_compose_github_repo]

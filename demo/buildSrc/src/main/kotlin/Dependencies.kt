@@ -1,8 +1,8 @@
 object Versions {
-    const val androidBuildToolsPlugin = "4.2.0-alpha12"
-    const val kotlinPlugin = "1.4.0"
+    const val androidBuildToolsPlugin = "7.0.0-alpha08"
+    const val kotlinPlugin = "1.4.30"
 
-    const val composeVersion = "1.0.0-alpha03" //alpha08 not yet released
+    const val composeVersion = "1.0.0-beta01" // Jetpack Compose is in Beta!
 
     const val timberLibraryVersion = "4.7.1"
 }
@@ -21,17 +21,23 @@ object Deps {
     object AndroidX {
         const val coreKotlinExtensions = "androidx.core:core-ktx:1.3.1"
         const val appCompat = "androidx.appcompat:appcompat:1.2.0"
-        const val contraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
+        const val constraintLayout = "androidx.constraintlayout:constraintlayout:1.1.3"
         const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha07"
 
         object Compose {
+            const val Foundation = "androidx.compose.foundation:foundation:${Versions.composeVersion}"
+            const val FoundationLayout = "androidx.compose.foundation:foundation-layout:${Versions.composeVersion}"
             const val UI = "androidx.compose.ui:ui:${Versions.composeVersion}"
+            const val UITooling = "androidx.compose.ui:ui-tooling:${Versions.composeVersion}"
             const val Material = "androidx.compose.material:material:${Versions.composeVersion}"
-            const val UITooling = "androidx.ui:ui-tooling:${Versions.composeVersion}"
             const val Compiler = "androidx.compose.compiler:compiler:${Versions.composeVersion}"
+            const val Runtime = "androidx.compose.runtime:runtime:${Versions.composeVersion}"
 
         }
 
+        object Activity {
+            const val Compose = "androidx.activity:activity-compose:1.3.0-alpha03"
+        }
 
         // Testing Libraries
         const val junitExt = "androidx.test.ext:junit:1.1.2"
