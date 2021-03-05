@@ -23,7 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.kartdroid.jetpackcomposeexp.ui.MaterialThemedSurface
 import com.kartdroid.jetpackcomposeexp.ui.parseColor
 
-class MainActivity : AppCompatActivity() {
+class ColumnDemoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
