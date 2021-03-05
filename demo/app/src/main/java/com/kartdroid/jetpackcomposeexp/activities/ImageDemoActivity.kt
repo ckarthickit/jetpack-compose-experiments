@@ -20,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.kartdroid.jetpackcomposeexp.R
 import com.kartdroid.jetpackcomposeexp.ui.MaterialThemedSurface
 
-class MainActivity2 : AppCompatActivity() {
+class ImageDemoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

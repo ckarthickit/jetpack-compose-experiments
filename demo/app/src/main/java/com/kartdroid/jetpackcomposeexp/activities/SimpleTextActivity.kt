@@ -21,7 +21,7 @@ class SimpleTextActivity : AppCompatActivity() {
         }
     }
 
-    @Preview(showBackground = true)
+    @Preview(showBackground = true, showSystemUi = true)
     @Composable
     fun SimpleTextScreen() {
         Column(

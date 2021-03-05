@@ -28,12 +28,15 @@ class LauncherActivity : AppCompatActivity() {
         }
     }
 
-    @Preview(showBackground = true)
+    @Preview(showSystemUi = true)
     @Composable
     fun LauncherScreen() {
         JetpackComposeExpTheme {
             Column {
                 FullWidthListItem(text = "SimpleText") { launchActivity(SimpleTextActivity::class) }
+                FullWidthListItem(text = "StyledText") { launchActivity(StyledTextActivity::class) }
+                FullWidthListItem(text = "ColumnDemo") { launchActivity(ColumnDemoActivity::class) }
+                FullWidthListItem(text = "ImageDemo") { launchActivity(ImageDemoActivity::class) }
             }
         }
     }
