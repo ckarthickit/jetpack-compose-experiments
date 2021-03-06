@@ -43,8 +43,47 @@
 >  1. The `compose-compiler` and `kotlin` versions are incompatible
 >  2. You don't have an `@Preview` annotated @Composable in the corresponding Source File
 
+## Compose Concepts 
 
-### Dependencies + Compatibility 
+### Recomposing 
+
+Observe Changes in App Data and automatically **re-call** the impacted **Compose Functions**.
+
+### States In Compose
+
+```kotlin
+@Composable
+fun Counter() {
+    val count = remember { mutableStateOf(0) }
+
+    Button(onClick = { count.value++ }) {
+        Text("I've been clicked ${count.value} times")
+    }
+}
+
+@Composable
+fun StateDemoCounter() {
+    val (counter, setCounter) = remember { mutableStateOf(0) }
+    Button(onClick = { setCounter(counter + 1) }) {
+        Text("$counter")
+    }
+}
+
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+@Composable
+fun StateDemoCounter2() {
+    var counter by remember { mutableStateOf(0) }
+    Button(onClick = { counter++; }) {
+        Text("$counter")
+    }
+}
+```
+
+- `mutableStateOf` gives a **Composable** __mutable memory__. When this mutable memory is changed, **re-composition** happens.
+- `remember` only invokes the passed lambda during **composition** and returns the same value during every **re-composition**.
+
+## Dependencies + Compatibility 
 
 |     Android Studio Version |     Gradle Version    |  Android Build tools - Gradle |   JDK Version   |  Compose Version    |
 |           -----            |           -----       |           -----               |     -----       |           -----     |
@@ -75,4 +114,4 @@
 [android_compose_codelabs_code]: https://github.com/googlecodelabs/android-compose-codelabs
 [jetpack_compose_library_structure]: https://developer.android.com/jetpack/androidx/releases/compose-compiler#structure
 [jetpack_compose_github_repo]: https://github.com/androidx/androidx
-[art_default_text_preview]: art/default_text_preview.png "Default Text Preview"
+[art_default_text_preview]: demo/art/default_text_preview.png "Default Text Preview"
