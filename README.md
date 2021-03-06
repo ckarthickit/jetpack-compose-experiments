@@ -34,8 +34,19 @@
 
 ### Modifiers
 
+Modifiers allow us to **decorate** a composable.  
+
+- The possible decorationsa are
+  1. Change Composaable's behaviour
+  2. Change it's appearence
+  3. Add informations like accesibility labels
+  4. Process User Input
+  5. High-Level interactions like making something **clickable** , **scrollable**, **draggable** , **zoomable**.
 - We can chain Modifiers
 - Modifiers are **applied in the order in which we chain them**.
+
+> By convention, the modifier is specified as the **first optional parameter** of a function.  
+> This enables you to specify a modifier on a composable without having to name all parameters.
 
 ### Problems + Solutions
 
@@ -53,16 +64,15 @@ Observe Changes in App Data and automatically **re-call** the impacted **Compose
 
 ```kotlin
 @Composable
-fun Counter() {
-    val count = remember { mutableStateOf(0) }
-
-    Button(onClick = { count.value++ }) {
-        Text("I've been clicked ${count.value} times")
+fun StateDemoCounter() {
+    val counter = remember { mutableStateOf(0) }
+    Button(onClick = { counter.value++ }) {
+        Text("${counter.value}")
     }
 }
 
 @Composable
-fun StateDemoCounter() {
+fun StateDemoCounter1() {
     val (counter, setCounter) = remember { mutableStateOf(0) }
     Button(onClick = { setCounter(counter + 1) }) {
         Text("$counter")
