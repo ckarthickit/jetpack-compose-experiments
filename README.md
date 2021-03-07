@@ -93,6 +93,56 @@ fun StateDemoCounter2() {
 - `mutableStateOf` gives a **Composable** __mutable memory__. When this mutable memory is changed, **re-composition** happens.
 - `remember` only invokes the passed lambda during **composition** and returns the same value during every **re-composition**.
 
+### Composition Locals
+
+- `CompositionLocalProvider`  provides a Composition local to the **sub-tree**.
+- `compositionLocalOf` creates a Composition local. 
+
+### Slot APIs
+
+  A **pattern** compose uses to bring a layer of customization of top of `Composables`.  
+  Slots leave an **empty space in the UI** for the developer to fill as they wish.
+
+-  Eg., Button Composable has left the inside of the button to be filled by us.  
+  `Slot`    
+  ![Button Slot][art_button_slot]  
+  ```kotlin
+  Button(
+      onClick = {},
+      modifier = Modifier.align(Alignment.CenterHorizontally)
+  ) {
+      Icon(
+          imageVector = Icons.Filled.Menu,
+          contentDescription = null,
+          modifier = Modifier.size(25.dp)
+      )
+      Spacer(Modifier.size(4.dp))
+      Column {
+          Text("Button")
+          CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.medium) {
+              Text("subtitle", style = MaterialTheme.typography.caption)
+          }
+      }
+  }
+  ```
+  `Slot Filled`  
+  ![Button Slot Filled][art_button_slot_filled]
+
+-  Top App Bar  
+   `Slot`   
+   ![Top AppBar Slot][art_topappbar_slot]
+   ```kotlin
+     TopAppBar(
+      title = {
+          Text(text = "Page title", maxLines = 2)
+      },
+      navigationIcon = {
+          Icon(myNavIcon)
+      }
+    )
+   ```
+   `Slot Filled`  
+   ![Top AppBar Slot Filled][art_topappbar_slot_filled]
 ## Dependencies + Compatibility 
 
 |     Android Studio Version |     Gradle Version    |  Android Build tools - Gradle |   JDK Version   |  Compose Version    |
@@ -125,3 +175,9 @@ fun StateDemoCounter2() {
 [jetpack_compose_library_structure]: https://developer.android.com/jetpack/androidx/releases/compose-compiler#structure
 [jetpack_compose_github_repo]: https://github.com/androidx/androidx
 [art_default_text_preview]: demo/art/default_text_preview.png "Default Text Preview"
+
+
+[art_button_slot]: art/button_slot.png "Button Slot"
+[art_button_slot_filled]: art/button_slot_filled.png "Button Slot - Filled"
+[art_topappbar_slot]: art/topappbar_slot.png "Top AppBar Slot"
+[art_topappbar_slot_filled]: art/topappbar_slot_filled.png "Top AppBar Slot - Filled"
