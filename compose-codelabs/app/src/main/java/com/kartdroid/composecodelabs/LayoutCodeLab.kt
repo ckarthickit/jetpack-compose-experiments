@@ -1,8 +1,8 @@
 package com.kartdroid.composecodelabs
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -21,9 +21,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.font.FontWeight.Companion
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kartdroid.composecodelabs.ui.theme.ComposeCodeLabsTheme
@@ -55,7 +53,7 @@ fun PhotographerCard() {
             .padding(4.dp)
             .clip(RoundedCornerShape(4.dp))
             .background(MaterialTheme.colors.surface)
-            .clickable {  }
+            .clickable { }
             .padding(8.dp)
     ) {
         Surface(
@@ -85,3 +83,5 @@ fun PhotographerCard() {
 fun Preview() {
     LayoutComposeDemo()
 }
+
+
