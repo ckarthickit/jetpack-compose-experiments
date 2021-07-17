@@ -190,6 +190,11 @@ fun TopBarContent(modifier: Modifier = Modifier) {
 fun BodyContentHome(modifier: Modifier = Modifier) {
     Column(modifier = modifier) {
         PhotographerCard()
+        Divider(color = MaterialTheme.colors.secondaryVariant)
+        Text(
+            modifier = Modifier.padding(4.dp),
+            text = "Sample"
+        )
     }
 }
 
