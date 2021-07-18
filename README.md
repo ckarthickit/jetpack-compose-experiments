@@ -50,9 +50,27 @@ Modifiers allow us to **decorate** a composable.
 
 ### Problems + Solutions
 
-- Jetpack Compose Preview is not visible
->  1. The `compose-compiler` and `kotlin` versions are incompatible
->  2. You don't have an `@Preview` annotated @Composable in the corresponding Source File
+
+#### Jetpack Compose Preview is not visible
+   
+1. The `compose-compiler` and `kotlin` versions are incompatible
+2. You don't have an `@Preview` annotated @Composable in the corresponding Source File  
+3. Android Studio is not compatible with a particular version of `androidx.compose.ui:ui-tooling` .
+     
+     ```kotlin
+     val compose_version = '1.0.0-rc02'
+     implementation("androidx.compose.ui:ui-tooling:$compose_version") {
+        version {
+            // TODO: Remove this when Android Studio has become compatible again
+            // Android Studio Bumblebee | 2021.1.1 Canary 3 is not compatible with module ui-tooling 1.0.0-rc01 or higher.
+            // The Run Configuration for Composable Previews that Android Studio makes expects a PreviewActivity class
+            // in the `androidx.compose.ui.tooling.preview` package, but it was moved in 1.0.0-rc01, and thus causes error:
+            // "androidx.compose.ui.tooling.preview.PreviewActivity is not an Activity subclass or alias".
+            // For more, see: https://stackoverflow.com/questions/68224361/jetpack-compose-cant-preview-after-updating-to-1-0-0-rc01
+            strictly("1.0.0-beta09")
+        }
+    }
+     ```
 
 ## Compose Concepts 
 
@@ -97,6 +115,8 @@ fun StateDemoCounter2() {
 
 - `CompositionLocalProvider`  provides a Composition local to the **sub-tree**.
 - `compositionLocalOf` creates a Composition local. 
+- `LocalContentColor` gives you the preferred color for content such as Icons and Typography.  
+It is changed by composables such as Surface that draw a background.
 
 ### Slot APIs
 
@@ -143,6 +163,7 @@ fun StateDemoCounter2() {
    ```
    `Slot Filled`  
    ![Top AppBar Slot Filled][art_topappbar_slot_filled]
+
 ## Dependencies + Compatibility 
 
 |     Android Studio Version |     Gradle Version    |  Android Build tools - Gradle |   JDK Version   |  Compose Version    |
