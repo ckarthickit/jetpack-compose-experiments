@@ -1,5 +1,3 @@
-# Compose CodeLabs
-
 # Layouts in Compose
 
 ## Alignment
@@ -123,6 +121,11 @@ Used to specify the arrangement of the **layout's children** in the **main axis*
    ```
 
 > Compose UI does not permit multi-pass measurement
+
+
+## Other Know Components
+
+- The `Surface` adds a background to the app, and configures the color of text.
 
 ## References
 
