@@ -145,10 +145,10 @@ fun StateDemoCounter2() {
    ![Top AppBar Slot Filled][art_topappbar_slot_filled]
 ## Dependencies + Compatibility 
 
-|     Android Studio Version |     Gradle Version    |  Android Build tools - Gradle |   JDK Version   |  Compose Version    |
-|           -----            |           -----       |           -----               |     -----       |           -----     |
-| Android Studio Artic Fox - 2020.3.1 | gradle-6.8.2-bin.zip |     7.0.0-alpha08     |  jdk-11.0.10    |     1.0.0-beta01    |
-
+|     Android Studio Version |     Gradle Version    |  Android Build tools - Gradle PLugin | Kotlin Gradle Plugin |   JDK Version   |  Compose Version    |
+|           -----            |           -----       |           -----               |     -----       |           -----     | --- |
+| Android Studio Artic Fox - `2020.3.1` | gradle-`6.8.2`-bin.zip |     com.android.tools.build:gradle:`7.0.0-alpha09`     | org.jetbrains.kotlin:kotlin-gradle-plugin:`1.4.30` | jdk-`11.0.10`    |     `1.0.0-beta01`    |
+| Android Studio Artic Fox - `2020.3.1` | gradle-`7.0.2`-bin.zip | com.android.tools.build:gradle:`7.0.0` | org.jetbrains.kotlin:kotlin-gradle-plugin:`1.5.10` | jdk-`11.0.10` | `1.0.0` (**First Stable Release**) |
 ### References
 
 - [Jetpack Compose - Pathway][jetpack_compose_pathway]
