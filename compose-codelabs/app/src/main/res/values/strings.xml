@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ComposeCodeLabs</string>
+    <string name="enter_something">Enter Something</string>
 </resources>

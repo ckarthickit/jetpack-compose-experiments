@@ -53,6 +53,11 @@ dependencies {
   implementation("androidx.compose.ui:ui:$composeVersion")
   implementation("androidx.compose.material:material:$composeVersion")
 
+  //Compose  Runtime  => has getValue , setValue delegates and mutableStateOf APIs
+  implementation("androidx.compose.runtime:runtime:$composeVersion")
+  //Compose Runtime LiveDate => Has observeAsState
+  implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
+
 
 
   //Compose Interop Libs
