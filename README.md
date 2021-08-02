@@ -181,6 +181,9 @@ It is changed by composables such as Surface that draw a background.
 - [Jetpack Compose - Samples][jetpack_compose_samples]
 - [Google Codelabs - Github][android_compose_codelabs_code]
 
+### Blogs
+- [Simple Android Animation][blogs_simple_android_animation]
+
 ---
 [jetpack_compose_setup]: https://developer.android.com/jetpack/compose/setup
 [jetpack_compose_pathway]: https://developer.android.com/courses/pathways/compose
@@ -197,6 +200,7 @@ It is changed by composables such as Surface that draw a background.
 [jetpack_compose_github_repo]: https://github.com/androidx/androidx
 [art_default_text_preview]: demo/art/default_text_preview.png "Default Text Preview"
 
+[blogs_simple_android_animation]: https://medium.com/mobile-app-development-publication/simple-android-animation-with-jetpack-compose-6eb718928f9b
 
 [art_button_slot]: art/button_slot.png "Button Slot"
 [art_button_slot_filled]: art/button_slot_filled.png "Button Slot - Filled"
