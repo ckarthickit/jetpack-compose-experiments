@@ -32,8 +32,8 @@ import com.kartdroid.composecodelabs.ScreenType.ANIMATING_LIST
 import com.kartdroid.composecodelabs.ScreenType.COMPOSE_AND_STATES
 import com.kartdroid.composecodelabs.ScreenType.FLEXIBLE_LAYOUTS
 import com.kartdroid.composecodelabs.ScreenType.LAZY_COLUMN
-import com.kartdroid.composecodelabs.ui.theme.ComposeCodeLabsTheme
-import com.kartdroid.composecodelabs.ui.theme.Orange
+import com.kartdroid.composecodelabs.theme.ComposeCodeLabsTheme
+import com.kartdroid.composecodelabs.theme.Orange
 
 enum class ScreenType {
     COMPOSE_AND_STATES,

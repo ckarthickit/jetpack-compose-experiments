@@ -8,10 +8,10 @@
 
 > For example, in a `ViewModel` `events are passed up` with method calls from the UI while `state flows down` using `LiveData`.
 
-## Stateless & Stateful Composables
+## Stateless & Stateful Composable
 
 
-### Stateless Compostables 
+### Stateless Composable
 
 - A stateless composable is a composable that `cannot directly change any state`.
 
@@ -20,16 +20,21 @@
   > -   `value: T` – the current `value` to display
   > - `onValueChange: (T) -> Unit` – an `event` that requests the value to change, where T is the proposed new value
 
-- Built-in composables are designed for unidirectional data flow. Most built-in composables provide `at least one stateless version for each API`. 
+- Built-in composable-s are designed for unidirectional data flow. Most built-in composable-s provide `at least one stateless version for each API`. 
     > This avoids duplicated state between your application and the component. 
 
-### Stateful Composables
+### Stateful Composable
 
 - A stateful composable is a composable that `owns a piece of state that it can change over time`.
 
 ## SideEffects 
 
-A `side-effect` is any `change that's visible outside execution of a composable function`.
+A `side-effect` is any `change that's visible outside execution of a composable function`.  
+> It's basically a `Shared Mutation` . 
+
+## Pure Functions
+
+- Given Same Inputs -> Emits Same Outputs `All the time`.
 
 ## Recomposition
 

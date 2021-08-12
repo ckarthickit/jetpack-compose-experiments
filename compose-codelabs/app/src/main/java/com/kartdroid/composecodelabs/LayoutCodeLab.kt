@@ -42,7 +42,6 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.List
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.getValue
@@ -57,7 +56,7 @@ import androidx.compose.ui.unit.dp
 import com.kartdroid.composecodelabs.TabNames.HOME
 import com.kartdroid.composecodelabs.TabNames.LIST1
 import com.kartdroid.composecodelabs.TabNames.LIST2
-import com.kartdroid.composecodelabs.ui.theme.ComposeCodeLabsTheme
+import com.kartdroid.composecodelabs.theme.ComposeCodeLabsTheme
 import dev.chrisbanes.accompanist.coil.CoilImage
 import kotlinx.coroutines.launch
 

@@ -1,4 +1,4 @@
-package com.kartdroid.composecodelabs.ui.theme
+package com.kartdroid.composecodelabs.theme
 
 import androidx.compose.ui.graphics.Color
 

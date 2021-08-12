@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">ComposeCodeLabs</string>
     <string name="enter_something">Enter Something</string>
+    <string name="icon_desc_account">Account</string>
+    <string name="icon_desc_done">Done</string>
+    <string name="icon_desc_call">Call</string>
+    <string name="generate_random_title">Generate Random Title</string>
 </resources>
