@@ -15,17 +15,31 @@
 
 - A stateless composable is a composable that `cannot directly change any state`.
 
-- `State Hoisting`  -  a pattern of moving state up to make a component stateless.
-  > When applied to composables, this often means introducing two parameters to the composable.
-  > -   `value: T` – the current `value` to display
-  > - `onValueChange: (T) -> Unit` – an `event` that requests the value to change, where T is the proposed new value
+- Built-in composable-s are designed for unidirectional data flow. 
 
-- Built-in composable-s are designed for unidirectional data flow. Most built-in composable-s provide `at least one stateless version for each API`. 
+- Most built-in composable-s provide `at least one stateless version for each API`. 
     > This avoids duplicated state between your application and the component. 
 
 ### Stateful Composable
 
 - A stateful composable is a composable that `owns a piece of state that it can change over time`.
+
+### State Hoisting
+
+- `State Hoisting`  -  a pattern of moving state up to `make a component stateless`.
+  > When applied to composable, this often means introducing two parameters to the composable.
+  > -   `value: T` – the current `value` to display
+  > - `onValueChange: (T) -> Unit` – an `event` that requests the value to change, where T is the proposed new value
+
+- Important Benefits of State Hoisting
+  
+    - `Single Source of Truth` -> by moving state instead of duplicating it, we're ensuring there's only one source of truth.  
+       This helps in avoiding bugs.  
+    -  `Encapsulated` - **only one composable is stateful** even though multiple composables use the state.  
+    -  `Shareable` - hoisted state can be shared as an immutable value with multiple composables.  
+    -  `Interceptable` - Since a single composable is stateful, can decide to ignore or modify events before changing its state.  
+    -  `Decoupled` - The stateless composable doesn't care where the value is coming from. State can be stored anywhere  
+       without modifying the stateless composable-s
 
 ## SideEffects 
 
@@ -146,11 +160,11 @@ Now  the composistion tree looks like :
 
 ![Todo Screen + TodoRow without Side Effect][todo_screen_tree_2]
 
-## Idempotent Composables
+## Idempotent Composable
 
 > An idempotent composable always produces the same result for the same inputs and has no side-effects on recomposition.  
 
-> Composables should be `idempotent` to support recomposition.
+> Composable should be `idempotent` to support recomposition.
 
 
 

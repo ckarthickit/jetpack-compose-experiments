@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
@@ -26,6 +25,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.kartdroid.composecodelabs.R.string
+import com.kartdroid.composecodelabs.statecodelab.todo.compoenents.TodoItemInput
 import com.kartdroid.composecodelabs.statecodelab.todo.model.TodoIcon.Call
 import com.kartdroid.composecodelabs.statecodelab.todo.model.TodoIcon.Done
 import com.kartdroid.composecodelabs.statecodelab.todo.model.TodoIcon.Square
@@ -80,8 +80,14 @@ fun TodoScreenContent(
             .padding(8.dp),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
+        TodoItemInput(
+            onAddItem,
+            Modifier.weight(15.0f)
+        )
         LazyColumn(
-            modifier = Modifier.weight(1.0f)
+            modifier = Modifier
+                .weight(80.0f)
+            //.wrapContentHeight()
         ) {
             this.items(items) { item: TodoItem ->
                 Row(
@@ -95,7 +101,9 @@ fun TodoScreenContent(
             }
         }
         Button(
-            modifier = Modifier.fillMaxWidth().weight(0.1f),
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(5f),
             onClick = { onAddItem(generateRandomTodoItem()) }
         ) {
             Text(text = stringResource(string.generate_random_title))
@@ -120,7 +128,6 @@ fun TodoPreview() {
             TodoItem("Task1", Call),
             TodoItem("Task2", Done),
             TodoItem("Task1", Square),
-        ),
-        {}
-    )
+        )
+    ) {}
 }
