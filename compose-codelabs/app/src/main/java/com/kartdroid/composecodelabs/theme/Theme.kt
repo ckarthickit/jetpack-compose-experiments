@@ -38,7 +38,7 @@ fun ComposeCodeLabsTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @C
     MaterialTheme(
         colors = colors,
         typography = Typography,
-        shapes = Shapes,
+        shapes = CodelabShapes,
         content = content
     )
 }
