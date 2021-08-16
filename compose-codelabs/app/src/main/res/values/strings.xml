@@ -8,4 +8,8 @@
     <string name="icon_desc_event">Event</string>
     <string name="icon_desc_star">Star</string>
     <string name="generate_random_title">Generate Random Title</string>
+    <string name="home">home</string>
+    <string name="read_time">%1$d min read</string>
+    <string name="top_article">Top Article</string>
+    <string name="other_articles">Other Articles</string>
 </resources>

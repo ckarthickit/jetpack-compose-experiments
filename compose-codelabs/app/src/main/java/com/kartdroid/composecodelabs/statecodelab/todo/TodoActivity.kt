@@ -33,7 +33,7 @@ import com.kartdroid.composecodelabs.statecodelab.todo.model.TodoItem
 import com.kartdroid.composecodelabs.statecodelab.todo.model.generateRandomTodoItem
 import com.kartdroid.composecodelabs.statecodelab.todo.videmodel.TodoViewModel
 import com.kartdroid.composecodelabs.theme.LightColorPalette
-import com.kartdroid.composecodelabs.theme.Shapes
+import com.kartdroid.composecodelabs.theme.CodelabShapes
 import com.kartdroid.composecodelabs.theme.Typography
 
 class TodoActivity : AppCompatActivity() {
@@ -56,7 +56,7 @@ fun TodoScreen(
 ) {
     MaterialTheme(
         colors = if (isSystemInDarkTheme()) LightColorPalette else LightColorPalette,
-        shapes = Shapes,
+        shapes = CodelabShapes,
         typography = Typography
     ) {
         Surface {
