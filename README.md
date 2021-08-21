@@ -164,6 +164,14 @@ It is changed by composables such as Surface that draw a background.
    `Slot Filled`  
    ![Top AppBar Slot Filled][art_topappbar_slot_filled]
 
+
+
+ ## CodeLab Docs
+
+ - [Layouts in Compose](./compose-codelabs/Layouts.md)
+ - [States in Compose](./compose-codelabs/States.md)
+ - [Themes in Compose](./compose-codelabs/Themes.md)
+
 ## Dependencies + Compatibility 
 
 |     Android Studio Version |     Gradle Version    |  Android Build tools - Gradle PLugin | Kotlin Gradle Plugin |   JDK Version   |  Compose Version    |

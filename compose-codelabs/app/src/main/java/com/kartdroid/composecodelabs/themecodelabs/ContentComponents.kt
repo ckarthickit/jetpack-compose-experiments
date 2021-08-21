@@ -11,7 +11,6 @@ import androidx.compose.material.Card
 import androidx.compose.material.ContentAlpha
 import androidx.compose.material.Divider
 import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.Icon
 import androidx.compose.material.ListItem
 import androidx.compose.material.LocalContentAlpha
 import androidx.compose.material.MaterialTheme
@@ -44,9 +43,6 @@ fun Header(
     Surface(
         color = MaterialTheme.colors.onSurface.copy(alpha = 0.2f),
         contentColor = MaterialTheme.colors.primary,
-        /**
-         * This Node is marked as "Heading" for accessibility
-         */
         /**
          * This Node is marked as "Heading" for accessibility
          */

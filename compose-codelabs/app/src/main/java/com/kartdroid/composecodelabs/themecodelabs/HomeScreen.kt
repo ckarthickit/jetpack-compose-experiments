@@ -1,5 +1,6 @@
 package com.kartdroid.composecodelabs.themecodelabs
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -35,8 +36,10 @@ import com.kartdroid.composecodelabs.R
 import com.kartdroid.composecodelabs.themecodelabs.theme.CodeLabTheme
 
 @Composable
-fun HomeScreen() {
-    CodeLabTheme {
+fun HomeScreen(
+    isDarkTheme: Boolean = isSystemInDarkTheme(),
+) {
+    CodeLabTheme(isDarkTheme) {
         Scaffold(
             topBar = { HomeTopBar() },
             bottomBar = { HomeBottomBar() },
@@ -94,7 +97,12 @@ fun HomeBottomBar() {
 fun HomeFAB() {
     Surface(
         shape = RoundedCornerShape(24.dp),
-        color = MaterialTheme.colors.primaryVariant
+        color = MaterialTheme.colors.primaryVariant,
+        /**
+         * This is automatically picked based on the `color` argument that we pass
+         * We an follow the same pattern for our Composable-s as well
+         */
+        contentColor = contentColorFor(backgroundColor = MaterialTheme.colors.primaryVariant)
     ) {
         IconButton(
             onClick = { /*TODO*/ },
@@ -161,4 +169,10 @@ fun PreviewHomeFAB() {
 @Composable
 fun PreviewThemeScreen() {
     HomeScreen()
+}
+
+@Preview("Theme Screen Preview - Dark")
+@Composable
+fun PreviewDarkThemeScreen() {
+    HomeScreen(true)
 }
