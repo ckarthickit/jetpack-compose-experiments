@@ -27,7 +27,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun AnimatedLoadingRow() {
+fun AnimatedLoadingRow(
+    modifier: Modifier = Modifier
+) {
     // Creates an `InfiniteTransition` that runs infinite child animation values.
     val infiniteTransition = rememberInfiniteTransition()
     val alpha by infiniteTransition.animateFloat(
@@ -47,16 +49,20 @@ fun AnimatedLoadingRow() {
             repeatMode = Reverse
         )
     )
-    LoadingRow(alpha = alpha)
+    LoadingRow(
+        alpha = alpha,
+        modifier = modifier
+    )
 }
 
 @Composable
 fun LoadingRow(
+    modifier: Modifier = Modifier,
     alpha: Float = 0.8f,
 ) {
     Surface(
         elevation = 4.dp,
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth()
     ) {
         Row(
             modifier = Modifier

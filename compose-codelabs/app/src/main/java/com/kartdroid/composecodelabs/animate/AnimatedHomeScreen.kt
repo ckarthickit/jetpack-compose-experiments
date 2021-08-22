@@ -129,6 +129,18 @@ private fun AnimateHomeContent(
             item {
                 AnimatedLoadingRow()
             }
+            item {
+                Spacer(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(40.dp)
+                )
+            }
+            item {
+                AnimatedLoadingRow(
+                    modifier = Modifier.swipeToDismiss {  }
+                )
+            }
             // Adding spacer to make it scrollable
             items(15) {
                 Spacer(
