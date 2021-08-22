@@ -119,8 +119,18 @@ private fun AnimateHomeContent(
             items(5) { index ->
                 ContentListItem(index = index)
             }
+            item {
+                Spacer(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(40.dp)
+                )
+            }
+            item {
+                AnimatedLoadingRow()
+            }
             // Adding spacer to make it scrollable
-            items(20) {
+            items(15) {
                 Spacer(
                     modifier = Modifier
                         .fillMaxWidth()
