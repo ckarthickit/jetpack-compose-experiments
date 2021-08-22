@@ -1,5 +1,8 @@
 package com.kartdroid.composecodelabs.animate
 
+import androidx.compose.animation.animateColor
+import androidx.compose.animation.core.animateDp
+import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -21,13 +24,12 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.TabPosition
 import androidx.compose.material.TabRow
-import androidx.compose.material.TabRowDefaults
-import androidx.compose.material.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -48,9 +50,10 @@ fun AnimateHomeTopBar(
     TabRow(
         selectedTabIndex = tabPage.ordinal,
         indicator = { tabPositions ->
-            TabRowDefaults.Indicator(
+            /*TabRowDefaults.Indicator(
                 modifier = Modifier.tabIndicatorOffset(tabPositions[tabPage.ordinal])
-            )
+            )*/
+            TabIndicator(tabPositions = tabPositions, currentPage = tabPage)
         }
     ) {
         TabItem(
@@ -108,6 +111,38 @@ fun PreviewTabItem() {
             modifier = Modifier.padding(4.dp)
         )
     }
+}
+
+@Composable
+fun TabIndicator(
+    tabPositions: List<TabPosition>,
+    currentPage: TabPage,
+) {
+    val transition = updateTransition(
+        targetState = currentPage,
+        "Tab Indicator"
+    )
+    val tabIndicatorLeft by transition.animateDp(
+        label = "Tab Indicator Left"
+    ) { page ->
+        tabPositions[page.ordinal].left
+    }
+    val tabIndicatorRight by transition.animateDp(
+        label = "Tab Indicator Right"
+    ) { page ->
+        tabPositions[page.ordinal].right
+    }
+    val tabIndicatorBorderColor by transition.animateColor(
+        label ="Tab Indicator Border Color"
+    ) { page ->
+        if(page == Home) Color.White else Color.Red
+    }
+
+    OutlineBox(
+        offset = tabIndicatorLeft,
+        width = tabIndicatorRight - tabIndicatorLeft,
+        color = tabIndicatorBorderColor
+    )
 }
 
 @Composable
