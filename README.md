@@ -188,10 +188,14 @@ It is changed by composables such as Surface that draw a background.
 - [Jetpack Compose - State][jetpack_compose_state_codelab]
 - [Jetpack Compose - Samples][jetpack_compose_samples]
 - [Google Codelabs - Github][android_compose_codelabs_code]
-- [Jetpacl Compose App - Collection Most Popular Tools & Demos][jetpack_compose_app]
+- [Jetpack Compose App - Collection Most Popular Tools & Demos][jetpack_compose_app]
+- [Jetpack Compose Official Docs](https://developer.android.com/jetpack/compose/documentation)
 
 ### Blogs
 - [Simple Android Animation][blogs_simple_android_animation]
+- [Expandable Lists in Jetpack Compose](https://proandroiddev.com/expandable-lists-in-jetpack-compose-b0b78c767b4)
+- [Creating a Repeating Button](https://proandroiddev.com/creating-a-repeating-button-with-jetpack-compose-b39c4f559f7d)
+- [InteractionSource, Ripple and Stuff](https://proandroiddev.com/jetpack-compose-interactionsources-the-ripple-effect-and-you-f451b60fcd37)
 
 ---
 [jetpack_compose_setup]: https://developer.android.com/jetpack/compose/setup
