@@ -196,6 +196,7 @@ It is changed by composables such as Surface that draw a background.
 - [Expandable Lists in Jetpack Compose](https://proandroiddev.com/expandable-lists-in-jetpack-compose-b0b78c767b4)
 - [Creating a Repeating Button](https://proandroiddev.com/creating-a-repeating-button-with-jetpack-compose-b39c4f559f7d)
 - [InteractionSource, Ripple and Stuff](https://proandroiddev.com/jetpack-compose-interactionsources-the-ripple-effect-and-you-f451b60fcd37)
+- [Shopping Cart - Bubble Shape](https://twitter.com/HandstandSam/status/1426602112599920644?ref_src=twsrc%5Etfw)
 
 ---
 [jetpack_compose_setup]: https://developer.android.com/jetpack/compose/setup
