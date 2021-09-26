@@ -58,10 +58,12 @@ dependencies {
   //Compose Runtime LiveDate => Has observeAsState
   implementation("androidx.compose.runtime:runtime-livedata:$composeVersion")
 
+  implementation("androidx.constraintlayout:constraintlayout-compose:1.0.0-beta02")
+
 
 
   //Compose Interop Libs
-  implementation("androidx.activity:activity-compose:1.3.0")
+  implementation("androidx.activity:activity-compose:1.3.1")
 
   //Compose Utils
   implementation("dev.chrisbanes.accompanist:accompanist-coil:0.6.0")
