@@ -187,7 +187,7 @@ fun TopBarContent(modifier: Modifier = Modifier) {
 
 @Composable
 fun BodyContentHome(modifier: Modifier = Modifier) {
-    Column(modifier = modifier) {
+    Column(modifier = modifier.padding(top=8.dp)) {
         PhotographerCard()
         Divider(color = MaterialTheme.colors.secondaryVariant)
         Text(
